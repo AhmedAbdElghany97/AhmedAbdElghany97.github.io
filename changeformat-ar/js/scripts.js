@@ -111,6 +111,6 @@ function copyFunction(res_id, btn_id) {
 		}, delayInMilliseconds);
 	})
 	.catch((error) => {
-		 alert("I can't copy");
+		 alert("لا يمكن النسخ، من فضلك افتح متصفح آخر، أو قم بتحديد النص ونسخه.");
 	})
 }
