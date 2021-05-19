@@ -96,7 +96,7 @@ function removeDots(text){
 	return result;
 }
 
-function copyFunction(res_id, btn_id) {
+async function copyFunction(res_id, btn_id) {
 	const text = document.getElementById(res_id).value;
 	const textToCopy = text;
 	navigator.clipboard.writeText(textToCopy).then(() => {
@@ -111,6 +111,27 @@ function copyFunction(res_id, btn_id) {
 		}, delayInMilliseconds);
 	})
 	.catch((error) => {
-		 alert("لا يمكن النسخ، من فضلك افتح متصفح آخر، أو قم بتحديد النص ونسخه.");
+		 copyFunction2(res_id,btn_id);
 	})
+}
+
+
+function copyFunction2(res_id,btn_id) {
+    var textArea = document.createElement('textarea');
+    textArea.setAttribute
+        ('style','width:1px;border:0;opacity:0;');
+    document.body.appendChild(textArea);
+    textArea.value = document.getElementById(res_id).value;
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    document.getElementById(btn_id).style.color = "#000";
+    document.getElementById(btn_id).innerHTML = "تمّ النسخ";
+    document.getElementById(btn_id).disabled = true;
+    var delayInMilliseconds = 1500;
+    setTimeout(function() {
+    	document.getElementById(btn_id).style.color = "#0d6efd";
+    	document.getElementById(btn_id).innerHTML = "نسخ النص";
+    	document.getElementById(btn_id).disabled = false;
+    }, delayInMilliseconds);
 }
