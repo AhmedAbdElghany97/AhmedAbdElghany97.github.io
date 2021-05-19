@@ -5,7 +5,7 @@
 * Facebook --> (https://www.facebook.com/Ahmed.AbdElghany97).
 !-- */
 
-//Array of all possible unicodes for every character.
+//Array of all possible unicodes for every character (Can be devoloped as you need).
 var items = [
 ['\u0627', '\u0640\uFE8D', '\u0640\uFE8E'], /*ا */
 ['\u0623', '\u0622', '\u0671', '\u0672', '\u0675', '\u0773', '\u0774', '\u0640\uFB51', '\u0640\uFB50', '\u0640\uFD3D', '\u0640\uFD3C','\u0640\uFE84','\u0640\uFE83','\u0640\uFE82','\u0640\uFE81'], /*أ */
