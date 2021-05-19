@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+	<title>My Test</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<style>
+		@font-face {
+			font-family: Tajawal;
+			src: url(fonts/Tajawal-Medium.ttf);
+		}
+		body{
+			text-align: right;
+			padding-top: 20px;
+			font-family: Tajawal;
+		}
+		.bd-clipboard {
+			float: left;
+		}
+		.btn-clipboard {
+			padding: .25rem .5rem;
+			font-size: .65em;
+			color: #0d6efd;
+			background-color: #fff;
+			border: 1px solid;
+			border-radius: .25rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">تغيير الترميز</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">إزالة النقط</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="tab-content" id="myTabContent">
+			<!-- Tab1 -->
+			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<br>
+				<div class="form-group shadow-textarea">
+					<!-- Input area -->
+					<label for="input-text">أكتب ما تريد</label>
+					<textarea class="form-control z-depth-1" id="input-text" rows="5" placeholder="أكتب شيئا..." style="resize: none;"></textarea>
+					<div class="text-center">
+						<button type="button" class="btn btn-primary btn-block btn-rounded z-depth-1" id="input-button">تحويل</button>
+					</div>
+					<br>
+
+					<!-- Result 1 area -->
+					<label for="input-text">النص المحَّول الاول</label>
+					<textarea disabled class="form-control z-depth-1" id="result-area1" rows="2" style="resize: none;"></textarea>
+					<div class="bd-clipboard">
+						<button type="button" class="btn-clipboard" id="cp_btn1" onclick="copyFunction('result-area1','cp_btn1')">نسخ النص</button>
+					</div>
+
+					<!-- Result 1 area -->
+					<label for="input-text">النص المحَّول الثاني</label>
+					<textarea disabled class="form-control z-depth-1" id="result-area2" rows="2" style="resize: none;"></textarea>
+
+					<div class="bd-clipboard">
+						<button type="button" class="btn-clipboard" id="cp_btn2" onclick="copyFunction('result-area2','cp_btn2')">نسخ النص</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tab2 -->
+			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<br>
+				<div class="form-group shadow-textarea">
+					<!-- Input area -->
+					<label for="input-text-dots">أكتب النص الذي تريد إزالة النقط منه</label>
+					<textarea class="form-control z-depth-1" id="input-text-dots" rows="5" placeholder="أكتب شيئا..." style="resize: none;"></textarea>
+					<div class="text-center">
+						<button type="button" class="btn btn-primary btn-block btn-rounded z-depth-1" id="input-button-dots">تحويل</button>
+					</div>
+					<br>
+
+					<!-- Result 1 area -->
+					<label for="input-text">النص بدون نقط</label>
+					<textarea disabled class="form-control z-depth-1" id="result-area-dots" rows="5" style="resize: none;"></textarea>
+					<div class="bd-clipboard">
+						<button type="button" class="btn-clipboard" id="cp_btn3" onclick="copyFunction('result-area-dots','cp_btn3')">نسخ النص</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<br>
+		<hr>
+	</div>
+
+	<footer class="text-center text-dark">
+		<!-- Copyright -->
+		<div class="text-center p-3" >
+			بواسطة: 
+			<a href="https://ahmedabdelghany97.github.io/">Ahmed Abd Elghany.</a>
+			<br>
+			<a href="https://www.linkedin.com/in/ahmedabdelghany97/" style="color: #000"><i class="fa fa-linkedin"></i></a>
+			| 
+			<a href="https://www.facebook.com/Ahmed.AbdElghany97" style="color: #000"><i class="fa fa-facebook"></i></a>
+		</div>
+		<!-- Copyright -->
+	</footer>
+	<hr>
+</div>
+</body>
+</html>
