@@ -98,7 +98,7 @@ function removeDots(text){
 
 function copyFunction(res_id, btn_id) {
 	const text = document.getElementById(res_id).value;
-	const textToCopy = text
+	const textToCopy = text;
 	navigator.clipboard.writeText(textToCopy).then(() => {
 		document.getElementById(btn_id).style.color = "#000";
 		document.getElementById(btn_id).innerHTML = "تمّ النسخ";
@@ -111,6 +111,6 @@ function copyFunction(res_id, btn_id) {
 		}, delayInMilliseconds);
 	})
 	.catch((error) => {
-		 
+		 alert("I can't copy");
 	})
 }
