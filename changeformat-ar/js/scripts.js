@@ -1,3 +1,11 @@
+/* --!
+* Ahmed Abd Elghany.
+* Change Unicode Randomly of Arabic Characters && Remove dots from Arabic Characters.
+* Linkedin --> (https://www.linkedin.com/in/ahmedabdelghany97).
+* Facebook --> (https://www.facebook.com/Ahmed.AbdElghany97).
+!-- */
+
+//Array of all possible unicodes for every character.
 var items = [
 ['\u0627', '\u0640\uFE8D', '\u0640\uFE8E'], /*ا */
 ['\u0623', '\u0622', '\u0671', '\u0672', '\u0675', '\u0773', '\u0774', '\u0640\uFB51', '\u0640\uFB50', '\u0640\uFD3D', '\u0640\uFD3C','\u0640\uFE84','\u0640\uFE83','\u0640\uFE82','\u0640\uFE81'], /*أ */
@@ -6,6 +14,7 @@ var items = [
 ['\u062A','\u067C','\u067A'] /*ت   */
 ];
 
+//Array of evey character without dots. (Note: The character without dot is the last index of each element of the array).
 var itemsDots = [
 ['\u0628', '\u062A', '\u062B','\u066E'],
 ['\u062C', '\u062E', '\u062D'],
@@ -21,6 +30,7 @@ var itemsDots = [
 ['\u0629', '\u0647']
 ];
 
+//Empty and Append the Result.
 $(document).ready(function() {
 	$("#input-button").click(function () {
 		var input1 = changeUnicodes($("#input-text").val());
@@ -39,6 +49,7 @@ $(document).ready(function() {
 	});
 });
 
+//Change Unicode of a Charachter Randomly.
 function changeUnicodes(text){
 	var result = '';
 	var rLen = true;
@@ -60,12 +71,14 @@ function changeUnicodes(text){
 	return result;
 }
 
+//Get random number between two numbers function.
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
+//Remove Dots Function.
 function removeDots(text){
 	var result = '';
 	var rLen = true;
@@ -96,7 +109,8 @@ function removeDots(text){
 	return result;
 }
 
-async function copyFunction(res_id, btn_id) {
+//Copy to Clipboard function.
+function copyFunction(res_id, btn_id) {
 	const text = document.getElementById(res_id).value;
 	const textToCopy = text;
 	navigator.clipboard.writeText(textToCopy).then(() => {
@@ -115,23 +129,23 @@ async function copyFunction(res_id, btn_id) {
 	})
 }
 
-
+//This is alternative function of CopyFunction if it didn't work.
 function copyFunction2(res_id,btn_id) {
-    var textArea = document.createElement('textarea');
-    textArea.setAttribute
-        ('style','width:1px;border:0;opacity:0;');
-    document.body.appendChild(textArea);
-    textArea.value = document.getElementById(res_id).value;
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-    document.getElementById(btn_id).style.color = "#000";
-    document.getElementById(btn_id).innerHTML = "تمّ النسخ";
-    document.getElementById(btn_id).disabled = true;
-    var delayInMilliseconds = 1500;
-    setTimeout(function() {
-    	document.getElementById(btn_id).style.color = "#0d6efd";
-    	document.getElementById(btn_id).innerHTML = "نسخ النص";
-    	document.getElementById(btn_id).disabled = false;
-    }, delayInMilliseconds);
+	var textArea = document.createElement('textarea');
+	textArea.setAttribute
+	('style','width:1px;border:0;opacity:0;');
+	document.body.appendChild(textArea);
+	textArea.value = document.getElementById(res_id).value;
+	textArea.select();
+	document.execCommand('copy');
+	document.body.removeChild(textArea);
+	document.getElementById(btn_id).style.color = "#000";
+	document.getElementById(btn_id).innerHTML = "تمّ النسخ";
+	document.getElementById(btn_id).disabled = true;
+	var delayInMilliseconds = 1500;
+	setTimeout(function() {
+		document.getElementById(btn_id).style.color = "#0d6efd";
+		document.getElementById(btn_id).innerHTML = "نسخ النص";
+		document.getElementById(btn_id).disabled = false;
+	}, delayInMilliseconds);
 }
